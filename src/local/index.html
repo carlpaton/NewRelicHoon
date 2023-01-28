@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function checkHealth() {
+            let url = "https://newrelichoon.c4gqqjqcosehs.ap-southeast-2.cs.amazonlightsail.com/health";
+
+            fetch(url).then(function (response) {
+                response.json().then(function (data) {
+                    console.log(data);
+                    return data;
+                })
+                .then((data) => {
+                    let healthwrapper = document.getElementById("health-wrapper");
+                    let div = document.createElement("div");
+                    div.innerHTML = data;
+                    healthwrapper.appendChild(div);
+                })
+            });
+        }
+
+        (function () {
+            checkHealth();
+        })();
+    </script>
+</head>
+<body>
+    <div id="health-wrapper"></div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "newrelichoon": {
+        "image": ":newrelichoon.newrelichoon-image.64",
+        "ports": {
+            "80": "HTTP"
+        }
+    }
+}
